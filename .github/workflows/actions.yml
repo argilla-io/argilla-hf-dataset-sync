@@ -32,7 +32,7 @@ jobs:
           ARGILLA_API_URL: ${{ secrets.ARGILLA_API_URL }}
           ARGILLA_API_KEY: ${{ secrets.ARGILLA_API_KEY }}
           SOURCE_DATASET: ${{ secrets.SOURCE_DATASET }}
-          PARSED_RESULTS_DATASET: ${{ secrets.HF_DATASET_RESULTS }}
+          HF_DATASET_RESULTS: ${{ secrets.HF_DATASET_RESULTS }}
 
           # Optional secrets and defaults
           REQUIRED_RESPONSES: ${{ secrets.REQUIRED_RESPONSES }}
