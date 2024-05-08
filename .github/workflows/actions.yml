@@ -30,15 +30,15 @@ jobs:
           REQUIRED_RESPONSES: ${{ secrets.REQUIRED_RESPONSES }}
 
           # Argilla API URLs
-          ARGILLA_API_URL: ${{ secrets.ARGILLA_API_URL_DUTCH }}
+          ARGILLA_API_URL: ${{ secrets.ARGILLA_API_URL }}
 
           # Argilla API Keys
-          ARGILLA_API_KEY: ${{ secrets.ARGILLA_API_KEY_DUTCH }}
+          ARGILLA_API_KEY: ${{ secrets.ARGILLA_API_KEY }}
 
           # Source Datasets
-          SOURCE_DATASET: ${{ secrets.SOURCE_DATASET_DUTCH }}
+          SOURCE_DATASET: ${{ secrets.SOURCE_DATASET }}
 
           # Source Workspace
-          SOURCE_WORKSPACE: ${{ secrets.SOURCE_WORKSPACE_DUTCH }}
+          SOURCE_WORKSPACE: ${{ secrets.SOURCE_WORKSPACE }}
 
         run: python main.py
