@@ -74,11 +74,11 @@ if completed_remote_records:
         results = rg.FeedbackDataset.from_argilla(RESULTS_DATASET, workspace=RESULTS_WORKSPACE)
         results.add_records(completed_local_records)
         if DELETE_SOURCE_RECORDS:
-            dataset.delete_records([r.id for r in completed_remote_records])
+            dataset.delete_records([r for r in completed_remote_records])
     except Exception as e:
         results = local_submitted.push_to_argilla(RESULTS_DATASET, workspace=RESULTS_WORKSPACE)
         if DELETE_SOURCE_RECORDS:
-            dataset.delete_records([r.id for r in completed_remote_records])
+            dataset.delete_records([r for r in completed_remote_records])
 
     parsed_results_dataset = build_parsed_results(results)
     print(f"Pushing dataset to {PARSED_RESULTS_DATASET}...")
