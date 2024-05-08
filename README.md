@@ -1,1 +1,1 @@
-This repository include files to refresh/move annotations for data together experiment executing a Python script periodically using cron inside a container.
+This repository can be used to sync datasets in Argilla Spaces with Hugging Face datasets. Optionally, it can be used to control the desired overlap of responses for records (e.g., minimum 2 responses per record)
