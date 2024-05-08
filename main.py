@@ -81,6 +81,9 @@ if completed_remote_records:
             dataset.delete_records([r.id for r in completed_remote_records])
 
     parsed_results_dataset = build_parsed_results(results)
+    print(f"Pushing dataset to {PARSED_RESULTS_DATASET}...")
     parsed_results_dataset.push_to_hub(PARSED_RESULTS_DATASET, token=HF_TOKEN)
+    print(f"Pushed dataset to {PARSED_RESULTS_DATASET}")
+    print(f"Pushing dataset to {RAW_DATASET}....")
     results.push_to_huggingface(RAW_DATASET, token=HF_TOKEN)
-    print(f"Updated and pushed datasets with {len(completed_remote_records)} records.")
+    print(f"Pushed dataset to {RAW_DATASET}")
