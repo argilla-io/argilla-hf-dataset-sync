@@ -76,7 +76,14 @@ if completed_remote_records:
         if DELETE_SOURCE_RECORDS:
             dataset.delete_records([r for r in completed_remote_records])
     except Exception as e:
-        results = local_submitted.push_to_argilla(RESULTS_DATASET, workspace=RESULTS_WORKSPACE)
+        rg_dataset = rg.FeedbackDataset(
+            fields=local_submitted.fields,
+            questions=local_submitted.questions,
+            metadata=local_submitted.metadata,
+            guidelines=local_submitted.guidelines
+        )
+        rg_dataset.add_records(completed_local_records)
+        results = rg_dataset.push_to_argilla(RESULTS_DATASET, workspace=RESULTS_WORKSPACE)
         if DELETE_SOURCE_RECORDS:
             dataset.delete_records([r for r in completed_remote_records])
 
