@@ -27,19 +27,19 @@ jobs:
 
       - name: execute py script # run main.py
         env:
+          # Required secrets
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          REQUIRED_RESPONSES: ${{ secrets.REQUIRED_RESPONSES }}
-
-          # Argilla API URLs
           ARGILLA_API_URL: ${{ secrets.ARGILLA_API_URL }}
-
-          # Argilla API Keys
           ARGILLA_API_KEY: ${{ secrets.ARGILLA_API_KEY }}
-
-          # Source Datasets
           SOURCE_DATASET: ${{ secrets.SOURCE_DATASET }}
+          PARSED_RESULTS_DATASET: ${{ secrets.HF_DATASET_RESULTS }}
 
-          # Source Workspace
+          # Optional secrets and defaults
+          REQUIRED_RESPONSES: ${{ secrets.REQUIRED_RESPONSES }}
+          RESULTS_DATASET: ${{ secrets.RESULTS_DATASET }}
           SOURCE_WORKSPACE: ${{ secrets.SOURCE_WORKSPACE }}
+          RESULTS_WORKSPACE: ${{ secrets.RESULTS_WORKSPACE }}
+          DELETE_SOURCE_RECORDS: ${{ secrets.DELETE_SOURCE_RECORDS }}
 
         run: python main.py
+
