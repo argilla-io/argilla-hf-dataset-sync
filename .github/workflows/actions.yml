@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+  workflow_dispatch:  # Enables manual trigger without additional inputs
   schedule:
     - cron: "0 * * * *" # Every hour at the top of the hour
 
