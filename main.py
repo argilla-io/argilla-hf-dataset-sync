@@ -7,7 +7,7 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 ARGILLA_API_URL = os.getenv("ARGILLA_API_URL")
 ARGILLA_API_KEY = os.getenv("ARGILLA_API_KEY")
 SOURCE_DATASET = os.getenv("SOURCE_DATASET")
-RAW_DATASET = os.getenv("RAW_DATASET")
+PARSED_RESULTS_DATASET = os.getenv("HF_DATASET_RESULTS")
 
 # Optional environment variables
 REQUIRED_RESPONSES = int(os.getenv("REQUIRED_RESPONSES", "2"))
@@ -15,7 +15,7 @@ RESULTS_DATASET = os.getenv("RESULTS_DATASET", f"{SOURCE_DATASET}-results")
 SOURCE_WORKSPACE = os.getenv("SOURCE_WORKSPACE", "admin")
 RESULTS_WORKSPACE = os.getenv("RESULTS_WORKSPACE", "results")
 DELETE_SOURCE_RECORDS = os.getenv("DELETE_SOURCE_RECORDS", "False").lower() == 'true'
-PARSED_RESULTS_DATASET = os.getenv("PARSED_RESULTS_DATASET", f"{RAW_DATASET}-parsed")
+
 
 def completed_with_overlap(records, required_responses):
     """
@@ -84,6 +84,6 @@ if completed_remote_records:
     print(f"Pushing dataset to {PARSED_RESULTS_DATASET}...")
     parsed_results_dataset.push_to_hub(PARSED_RESULTS_DATASET, token=HF_TOKEN)
     print(f"Pushed dataset to {PARSED_RESULTS_DATASET}")
-    print(f"Pushing dataset to {RAW_DATASET}....")
-    results.push_to_huggingface(RAW_DATASET, token=HF_TOKEN)
-    print(f"Pushed dataset to {RAW_DATASET}")
+    #print(f"Pushing dataset to {RAW_DATASET}....")
+    #results.push_to_huggingface(RAW_DATASET, token=HF_TOKEN)
+    #print(f"Pushed dataset to {RAW_DATASET}")
