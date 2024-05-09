@@ -80,7 +80,7 @@ if completed_remote_records:
         rg_dataset = rg.FeedbackDataset(
             fields=local_submitted.fields,
             questions=local_submitted.questions,
-            metadata=local_submitted.metadata,
+            metadata=local_submitted.metadata_properties,
             guidelines=local_submitted.guidelines
         )
         rg_dataset.add_records(completed_local_records)
