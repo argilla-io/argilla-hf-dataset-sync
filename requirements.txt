@@ -1,4 +1,4 @@
-argilla
+argilla==1.27.0
 datasets
 huggingface_hub
 jinja2
