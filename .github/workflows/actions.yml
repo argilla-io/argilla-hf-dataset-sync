@@ -6,7 +6,7 @@ on:
       - "main"
   workflow_dispatch:  # Enables manual trigger without additional inputs
   schedule:
-    - cron: "0 */4 * * *" # Every 4 hours at the top of the hour
+    - cron: "0 * * * *" # Every hour at the top of the hour
 
 jobs:
   build:
