@@ -33,7 +33,7 @@ if len(record_list)>0:
   hf_ds = hf_ds.remove_columns(["vectors"])
     
   # Load existing hf dataset
-  previous_hf_ds = load_dataset("CohereForAI/mmlu-translations-results", split="train")
+  previous_hf_ds = load_dataset(HF_DATASET_RESULTS, split="train")
   print(f"Current HF dataset size: {len(previous_hf_ds)}")
     
   # Add new submitted records
