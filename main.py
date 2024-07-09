@@ -33,13 +33,13 @@ if len(record_list)>0:
   hf_ds = hf_ds.remove_columns(["vectors"])
     
   # Load existing hf dataset
-  previous_hf_ds = load_dataset(HF_DATASET_RESULTS, split="train")
+  previous_hf_ds = load_dataset(PARSED_RESULTS_DATASET, split="train")
   print(f"Current HF dataset size: {len(previous_hf_ds)}")
     
   # Add new submitted records
   concatenated = concatenate_datasets([previous_hf_ds,hf_ds])
   print(f"New HF dataset size:  {len(concatenated)}")
-  concatenated.push_to_hub(HF_DATASET_RESULTS, private=True)
+  concatenated.push_to_hub(PARSED_RESULTS_DATASET, private=True)
   print(f"New HF dataset size:  {len(concatenated)}")
 
   print(f"Deleting records")
