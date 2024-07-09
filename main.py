@@ -39,7 +39,7 @@ if len(record_list)>0:
   # Add new submitted records
   concatenated = concatenate_datasets([previous_hf_ds,hf_ds])
   print(f"New HF dataset size:  {len(concatenated)}")
-  concatenated.push_to_hub("CohereForAI/mmlu-translations-results", private=True)
+  concatenated.push_to_hub(HF_DATASET_RESULTS, private=True)
   print(f"New HF dataset size:  {len(concatenated)}")
 
   print(f"Deleting records")
